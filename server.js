@@ -1,5 +1,5 @@
 const express = require('express')
-const { createServer } = require( "https");
+const { createServer } = require( "http");
 const { Server } = require("socket.io");
 const userRoutes = require('./routes/userRoutes')
 const postRoutes = require('./routes/postRoutes')
@@ -31,7 +31,7 @@ const httpServer = createServer(app);
 //initilize socket.io
 const io = new Server(httpServer, { 
     cors: {
-        origin: ["https://connect-app-frontend.vercel.app", "https://localhost:3000"]
+        origin: "https://connect-app-frontend.vercel.app"
     } 
 });
 
